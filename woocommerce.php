@@ -18,6 +18,7 @@ get_header();
 <div id="anchorCatalog" class="catalog">
 	<main id="main" class="wrapper">
 
+		<?php echo do_shortcode('[wcas-search-form]'); ?>
 		<?php woocommerce_content(); ?>
 
 	</main><!-- #main -->
