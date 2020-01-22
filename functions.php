@@ -22,6 +22,7 @@ add_theme_support('menus');
 
 
 add_filter('woocommerce_add_to_cart_fragments', 'header_add_to_cart_fragment');
+add_filter( 'woocommerce_cart_needs_payment', '__return_false' );
 
 function header_add_to_cart_fragment( $fragments ) {
     global $woocommerce;

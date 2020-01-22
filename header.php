@@ -71,13 +71,6 @@
 						<a href="tel:+7 (473)-258-64-20" class="phone">+7 (473)-258-64-20</a>
 						<div class="mobileBtnMenu" @click="showMobileMenu = true"></div>
 					</div>
-                    <div class="s-header__basket-wr woocommerce">
-                        <?php
-                        global $woocommerce; ?>
-                        <a href="<?php echo $woocommerce->cart->get_cart_url() ?>" class="basket-btn basket-btn_fixed-xs">
-                            <span class="basket-btn__counter">(<?php echo sprintf($woocommerce->cart->cart_contents_count); ?>)</span>
-                        </a>
-                    </div>
 				</div>
 				<transition name="fade" v-cloak>
 					<div class="menuOverlay" v-show="showMobileMenu"></div>
