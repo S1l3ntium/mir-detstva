@@ -24,6 +24,9 @@ add_theme_support('menus');
 add_filter('woocommerce_add_to_cart_fragments', 'header_add_to_cart_fragment');
 add_filter( 'woocommerce_cart_needs_payment', '__return_false' );
 
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+
 function header_add_to_cart_fragment( $fragments ) {
     global $woocommerce;
     ob_start();
