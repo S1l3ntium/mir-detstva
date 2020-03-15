@@ -21917,7 +21917,7 @@ Vue.component('sliderSeries', {
 	computed: {
 		style: function () {
 			return {
-				'background-image': 'url(../css/images/slider/' + this.imgKey + '.jpg)'
+				'background-image': 'url(<?php echo get_template_directory_uri(); ?>/assets/css/images/slider/' + this.imgKey + '.jpg)'
 			}
 		}
 	},
@@ -21934,7 +21934,7 @@ Vue.component('sliderSeries', {
 			var next = this.slider.realIndex + 1;
 			if (_.has(this.series, next) && !_.has(this.images, next)) {
 				this.images[next] = new Image();
-				this.images[next].src = '../css/images/slider/' + this.series[next].key + '.jpg';
+				this.images[next].src = '' + mytheme.template_url + '/assets/css/images/slider/' + this.series[next].key + '.jpg';
 			}
 		}
 	}
@@ -22552,3 +22552,9 @@ var app = new Vue({
 		}
 	}
 });;
+
+  $(".hover").mouseleave(
+    function () {
+      $(this).removeClass("hover");
+    }
+  );

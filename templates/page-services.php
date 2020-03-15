@@ -6,7 +6,8 @@ get_header();
 ?>
 <section class="company">
     <div class="wrapper">
-    <?php echo do_shortcode('[acf field="{$montazh}"]');?>
+    <h2 class="title alt2">Монтаж</h2>
+    <p class="text"><?php the_field('montazh'); ?></p>
     </div>
 </section>
 <section class="company">
@@ -17,5 +18,8 @@ get_header();
         <?php echo do_shortcode('[foogallery id="244"]') ?>
     </div>
 </section>
+
+
+
 
 <?php get_footer(); ?>

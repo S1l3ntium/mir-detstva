@@ -4,12 +4,29 @@ Template Name: Главная
 */
 ?>
 <?php get_header(); ?>
-    <slider-series :series='[{"key":"siberia","name":"Сибирь","desc":"Малые и&nbsp;средние игровые комплексы для детей от&nbsp;7 до&nbsp;12 лет","count":13},{"key":"valdika","name":"Вальдика","desc":"Малые и&nbsp;средние игровые комплексы для детей от&nbsp;7 до&nbsp;12 лет","count":17},{"key":"kindik","name":"Киндик","desc":"Малые и&nbsp;средние деревянные игровые комплексы для детей от&nbsp;7 до&nbsp;12 лет","count":42},{"key":"slide","name":"Слайд","desc":"Средние и&nbsp;большие игровые комплексы для детей от&nbsp;7 до&nbsp;12 лет","count":16},{"key":"nordica","name":"Нордика","desc":"Малые и&nbsp;средние игровые комплексы для детей от&nbsp;7 до&nbsp;12 лет","count":38},{"key":"olimpic","name":"Олимпик","desc":"Комплексы и&nbsp;оборудование для детских спортивных площадок","count":46},{"key":"workout","name":"Воркаут","desc":"Оборудование для занятия активным спортом","count":49},{"key":"fitness","name":"Уличные тренажёры","desc":"Оборудование для фитнес-тренировок на&nbsp;открытом воздухе","count":38}]' inline-template>
+    <slider-series :series='[
+    {"key":"siberia","name":"Сибирь","desc":"Малые и&nbsp;средние игровые комплексы для детей от&nbsp;7 до&nbsp;12 лет","count":199999},
+    {"key":"valdika","name":"Вальдика","desc":"Малые и&nbsp;средние игровые комплексы для детей от&nbsp;7 до&nbsp;12 лет","count":17},
+    {"key":"kindik","name":"Киндик","desc":"Малые и&nbsp;средние деревянные игровые комплексы для детей от&nbsp;7 до&nbsp;12 лет","count":42},
+    {"key":"slide","name":"Слайд","desc":"Средние и&nbsp;большие игровые комплексы для детей от&nbsp;7 до&nbsp;12 лет","count":16},
+    {"key":"nordica","name":"Нордика","desc":"Малые и&nbsp;средние игровые комплексы для детей от&nbsp;7 до&nbsp;12 лет","count":38},
+    {"key":"olimpic","name":"Олимпик","desc":"Комплексы и&nbsp;оборудование для детских спортивных площадок","count":46},
+    {"key":"workout","name":"Воркаут","desc":"Оборудование для занятия активным спортом","count":49},
+    {"key":"fitness","name":"Уличные тренажёры","desc":"Оборудование для фитнес-тренировок на&nbsp;открытом воздухе","count":38},
+    {"key":"siberia","name":"Сибирь","desc":"Малые и&nbsp;средние игровые комплексы для детей от&nbsp;7 до&nbsp;12 лет","count":199999},
+    {"key":"siberia","name":"Сибирь","desc":"Малые и&nbsp;средние игровые комплексы для детей от&nbsp;7 до&nbsp;12 лет","count":199999},
+    {"key":"siberia","name":"Сибирь","desc":"Малые и&nbsp;средние игровые комплексы для детей от&nbsp;7 до&nbsp;12 лет","count":199999},
+    {"key":"siberia","name":"Сибирь","desc":"Малые и&nbsp;средние игровые комплексы для детей от&nbsp;7 до&nbsp;12 лет","count":199999},
+    {"key":"siberia","name":"Сибирь","desc":"Малые и&nbsp;средние игровые комплексы для детей от&nbsp;7 до&nbsp;12 лет","count":199999},
+    {"key":"siberia","name":"Сибирь","desc":"Малые и&nbsp;средние игровые комплексы для детей от&nbsp;7 до&nbsp;12 лет","count":199999},
+    {"key":"siberia","name":"Сибирь","desc":"Малые и&nbsp;средние игровые комплексы для детей от&nbsp;7 до&nbsp;12 лет","count":199999},
+    {"key":"siberia","name":"Сибирь","desc":"Малые и&nbsp;средние игровые комплексы для детей от&nbsp;7 до&nbsp;12 лет","count":199999},
+    {"key":"siberia","name":"Сибирь","desc":"Малые и&nbsp;средние игровые комплексы для детей от&nbsp;7 до&nbsp;12 лет","count":199999},]' inline-template>
         <section class="slider" :style="style">
             <div class="wrapper">
                 <h1 class="sliderTitle title alt1">
                     Мир детства начинается <br> с
-                    <a href="/catalog" class="under">Нашего Двора</a> </h1>
+                    <a href="/сatalog" class="under">Нашего Двора</a> </h1>
                 <transition appear name="fade" v-cloak>
                     <p class="sliderText">
                         Самый разнообразный каталог товаров: от детских площадок до спортивных комплексов</p>
@@ -19,7 +36,7 @@ Template Name: Главная
                         <div class="navTitle">Популярные серии</div>
                         <swiper :options="options" ref="sliderThumb" @slide-change-transition-start="onSlideChange()">
                             <swiper-slide v-for="(s, index) in series" :key="index">
-                                <a :href="'/catalog?series[]='" class="slideName">
+                                <a :href="'/cat/series/'" class="slideName">
                                     ${ s.name }
                                 </a>
                                 <p class="slideText" v-html="s.desc"></p>
@@ -30,11 +47,6 @@ Template Name: Главная
             </div>
         </section>
     </slider-series>
-    <section>
-            <div class="wrapper">
-                <?php echo do_shortcode('[smartslider3 slider=3]'); ?>
-            </div>
-        </section>
     <section class="steps">
         <div class="wrapper">
             <div class="stepsWrap">
@@ -81,7 +93,6 @@ Template Name: Главная
             </div>
         </div>
     </section>
-
     <section class="mapRegions">
         <div class="wrapper">
             <h2 class="title alt2">
@@ -98,16 +109,35 @@ Template Name: Главная
             <div class="mapSvg"><img src="<?php echo get_template_directory_uri(); ?>/assets/css/images/map.png" alt=""></div>
         </div>
     </section>
+    <section class="news">
+        <div class="wrapper">
+                    <h2 class="title alt2">Новости</h2>
+                    <p class="text">Здесь вы можете узнать последние события из жизни нашей компании.</p>
+            <div class="newsWrap">
+                <?php $query = new WP_Query('post_type=blog&posts_per_page=3');
+                                if ($query->have_posts()) : ?>
+                                <?php while ($query->have_posts()) : $query->the_post(); ?>
 
+                                    <a href="<?php the_permalink(); ?>" class="catalogItem itemProduct" style="">
+                                        <div class="itemImg"><?php the_post_thumbnail(); ?></div>
+                                        <div class="itemArt"><?php echo get_the_date( 'j F Y' ); ?></div>
+                                        <h2 class="itemName"><?php the_title(); ?></h2>
+                                    </a>
+                <?php endwhile; ?>
+                <?php endif; ?>
+                <button class="btn btnMore catalogMore"><a href="/news">Загрузить ещё</a></button>
 
+                        
+            </div>
+                    
+        </div>
+    </section>
     <section class="mapRegions">
         <div class="wrapper">
             <h2 class="title alt2">Сертификаты</h2>
             <p class="text"> Мы награждены многими дипломами и наградами. </p>
             <div class="mapSvg">
-            <?php
-            echo do_shortcode('[smartslider3 slider=2]');
-            ?>
+            <?php echo do_shortcode('[smartslider3 slider=2]'); ?>
             </div>
     </section>
 

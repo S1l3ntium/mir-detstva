@@ -15,14 +15,11 @@
 get_header();
 ?>
 
-<div id="anchorCatalog" class="catalog">
-	<main id="main" class="wrapper">
-
-		<?php echo do_shortcode('[wcas-search-form]'); ?>
-		<?php woocommerce_content(); ?>
-
-	</main><!-- #main -->
-</div><!-- #primary -->
+<section class="error404">
+	<div class="wrapper">
+					<?php woocommerce_content(); ?>
+	</div>
+</section>
 
 <?php
 get_sidebar();
