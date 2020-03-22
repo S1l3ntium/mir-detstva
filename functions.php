@@ -12,7 +12,6 @@ function action_function_name_7714(){
   ) );
 }
 
-
 function style_theme() {
 	wp_enqueue_style('reset', get_template_directory_uri() . '/assets/css/reset.css');
 	wp_enqueue_style( 'bundle', get_template_directory_uri() . '/assets/css/bundle.css' );
@@ -41,6 +40,8 @@ add_filter( 'woocommerce_cart_needs_payment', '__return_false' );
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
 add_filter('woocommerce_subcategory_count_html','remove_count');
+
+add_image_size( 'news-image', 400, 300, true );
 
 function remove_count(){
     $html='';

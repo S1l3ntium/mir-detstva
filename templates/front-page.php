@@ -120,12 +120,12 @@ Template Name: Главная
 
                                     <a href="<?php the_permalink(); ?>" class="catalogItem itemProduct" style="">
                                         <div class="itemImg"><?php the_post_thumbnail(); ?></div>
-                                        <div class="itemArt"><?php echo get_the_date( 'j F Y' ); ?></div>
                                         <h2 class="itemName"><?php the_title(); ?></h2>
+                                        <div class="itemArt"><?php echo get_the_date( 'j F Y' ); ?></div>
                                     </a>
                 <?php endwhile; ?>
                 <?php endif; ?>
-                <button class="btn btnMore catalogMore"><a href="/news">Загрузить ещё</a></button>
+                <button class="btn btnMore catalogMore"><a href="/novosti">Загрузить ещё</a></button>
 
                         
             </div>
@@ -137,7 +137,9 @@ Template Name: Главная
             <h2 class="title alt2">Сертификаты</h2>
             <p class="text"> Мы награждены многими дипломами и наградами. </p>
             <div class="mapSvg">
-            <?php echo do_shortcode('[smartslider3 slider=2]'); ?>
+            <?php
+                echo do_shortcode('[smartslider3 slider=2]');
+            ?>
             </div>
     </section>
 

@@ -21917,7 +21917,7 @@ Vue.component('sliderSeries', {
 	computed: {
 		style: function () {
 			return {
-				'background-image': 'url(<?php echo get_template_directory_uri(); ?>/assets/css/images/slider/' + this.imgKey + '.jpg)'
+				'background-image': 'url(' + mytheme.template_url + '/assets/css/images/slider/' + this.imgKey + '.jpg)'
 			}
 		}
 	},
