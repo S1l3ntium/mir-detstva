@@ -30,9 +30,6 @@ function remove_menus(){
 add_theme_support ('custom-logo');
 add_theme_support('menus');
 
-add_theme_support( 'wc-product-gallery-lightbox' );
-add_theme_support( 'wc-product-gallery-slider' );
-
 
 add_filter('woocommerce_add_to_cart_fragments', 'header_add_to_cart_fragment');
 add_filter( 'woocommerce_cart_needs_payment', '__return_false' );

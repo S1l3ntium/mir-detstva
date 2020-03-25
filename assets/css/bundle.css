@@ -4232,7 +4232,6 @@ footer .secondFooter img {
     image-rendering: -webkit-optimize-contrast;
     display: block;
     max-width: 90%;
-    max-height: 50%;
     margin: 0 auto 20px;
     -webkit-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out
@@ -14135,3 +14134,4 @@ ul.wc-tabs {
     color: black;
     background-color: black;
 }
+
