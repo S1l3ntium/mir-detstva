@@ -9150,7 +9150,8 @@ footer .secondFooter img {
     font-size: 24px;
     line-height: 30px;
     font-weight: 500;
-    margin-bottom: 15px
+    margin-bottom: 15px;
+    margin-top: 15px;
 }
 
 .contacts .contSubTitle {
@@ -11594,7 +11595,8 @@ padding-bottom: 70px
     font-size: 24px;
     line-height: 30px;
     font-weight: 500;
-    margin-bottom: 15px
+    margin-bottom: 15px;
+    margin-top: 15px;
 }
 
 .contacts .contSubTitle {
@@ -14096,6 +14098,16 @@ div.wpcf7-acceptance-missing {
     border-radius: 15px;
 }
 
+.wpc7-form .label-box label {
+    top: -105px;
+}
+.wpc7-form h1 {
+    margin-bottom: 55px;
+}
+span.wpcf7-not-valid-tip{
+    position: absolute;
+    top: 25px;
+}
 footer i {
     font-size: 30px;
     margin-right: 20px;

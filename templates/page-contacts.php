@@ -10,35 +10,32 @@ get_header();
                     <h1 class="title alt2">
                         Контактная информация </h1>
                     <h2>Телефоны</h2>
-                    <a href="tel:+7 (900) 301-54-72" class="contData contPhone">
-                        +7 (900) 301-54-72 </a>
-                    <a href="tel:+7 (473) 258-64-20" class="contData contPhone">
-                        +7 (473) 258-64-20 </a>
+                        <?php if (get_field('telSection')) : ?>
+                            <?php while (have_rows('telSection')) : the_row();
+                                $tS_tel = get_sub_field('tS_tel');
+                                $tS_telhref = get_sub_field('tS_telhref');?>
+                                    <a href="tel:<?php echo $tS_telhref;?>" class="contData contPhone"><?php echo $tS_tel;?></a>
+                            <?php endwhile; ?>
+                        <?php endif; ?>
                     <h2>Электронная почта</h2>
-                    <a href="mailto:sales-md@mail.ru" class="contData contEmail">
-                        sales-md@mail.ru</a>
-                    <a href="mailto:tdmd1@mail.ru" class="contData contEmail">
-                        tdmd1@mail.ru</a>
-                    <div class="contIndent1"></div>
-                    <div class="contSubTitle">
-                        Фактический адрес </div>
-                    <p class="contData contAddr">
-                        396830, Воронежская область, Хохольский район, село Хохол, ул. Ломоносова, д. 1, оф.2 </p>
-                    <div class="contSubTitle">
-                        Юридический адрес </div>
-                    <p class="contData contAddr">
-                        396830, Воронежская область, Хохольский район, село Хохол, ул. Ломоносова, д. 1, оф.2. </p>
-                    <div class="contSubTitle">
-                        Мы на карте </div>
+                        <?php if (get_field('emailSection')) : ?>
+                                <?php while (have_rows('emailSection')) : the_row();
+                                    $eS_email = get_sub_field('eS_email'); ?>
+                                        <a href="mailto:<?php echo $eS_email; ?>" class="contData contEmail"><?php echo $eS_email; ?></a>
+                                <?php endwhile; ?>
+                        <?php endif; ?>
+                    <h2>Наши адреса</h2>
+                        <?php if (get_field('adressSection')) : ?>
+                                <?php while (have_rows('adressSection')) : the_row();
+                                    $aS_title = get_sub_field('aS_title');
+                                    $aS_adress = get_sub_field('aS_adress'); ?>
+                                        <div class="contSubTitle"><?php echo $aS_title ?></div>
+                                        <p class="contData contAddr"><?php echo $aS_adress; ?></p>
+                                <?php endwhile; ?>
+                        <?php endif; ?>
+                    <h2>Мы на карте</h2>
                     <div class="contMap bgMap">
-                        <yandex-map :coords="[51.635633, 39.251882]" :zoom="4" :scroll-zoom="false"
-                                    :zoom-control="{options: {size: 'small', position: {left: 'auto', right: 10, top: 10, buttom: 'auto'}}}"
-                                    :controls="['zoomControl']">
-                            <ymap-marker :marker-id="1" :marker-type="'placemark'" :coords="[51.635633, 39.251882]"
-                                         :balloon="{header: 'ООО «Мир Детства»', body: 'Самый разнообразный каталог товаров: от детских площадок до спортивных комплексов'}"
-                                         :properties="{iconCaption: 'Мир Детства'}"
-                                         :icon="{color: 'blue', glyph: 'StarCircle'}"></ymap-marker>
-                        </yandex-map>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2476.321538879745!2d39.24969331598926!3d51.63563630913957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDM4JzA4LjMiTiAzOcKwMTUnMDYuOCJF!5e0!3m2!1sru!2sru!4v1585582284897!5m2!1sru!2sru" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                     </div>
                     <div class="contactsFeedBack">
                         <?php echo do_shortcode('[contact-form-7 id="213" title="Contact Form"]') ?>
@@ -52,28 +49,22 @@ get_header();
                         <div class="contReqItem">
                             <div class="contReqTitle">
                                 Реквизиты фирмы </div>
-                            <p class="contReqText">
-                                Общество с ограниченной ответственностью ГК «МИР ДЕТСТВА» </p>
-                            <p class="contReqText">
-                                ИНН / КПП: 3631006641 / 363101001</p>
-                            <p class="contReqText">
-                                396830, Воронежская обл., Хохольский р-н, с. Хохол, ул. Ломоносова, д.1, оф. 2</p>
+                            <p class="contReqText"><?php the_field('requisitesSection'); ?></p>
                         </div>
                         <div class="contReqItem">
                             <div class="contReqTitle">
                                 Банковские реквизиты </div>
-                            <p class="contReqText">
-                                АО "АЛЬФА-БАНК" </p>
-                            <p class="contReqText">
-                                БИК: 044525593 </p>
-                            <p class="contReqText">
-                                р/с: 40702810202480000805 </p>
-                            <p class="contReqText">
-                                к/с: 30101810200000000593 </p>
+                            <p class="contReqText"><?php the_field('bankRequisitesSection'); ?></p>
                         </div>
                     </div>
                 </aside>
             </div>
         </section>
+
+
+        
+
+
+
     <?php get_footer(); ?>
 
