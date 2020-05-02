@@ -2,10 +2,8 @@
 /*
 Template Name: Страница в разработке
 */
-
 get_header();
 ?>
-
 <section class="error404">
         <div class="wrapper">
             <h2 class="title alt2">Упс...</h2>

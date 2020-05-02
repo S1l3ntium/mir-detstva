@@ -77,38 +77,30 @@ Template Name: Главная
             </div>
         </div>
     </section>
-    <section class="company">
-        <div class="wrapper">
-            <div class="companyWrap" id="company">
-                <h2 class="title alt2">
-                    Наш Двор это… </h2>
-                <p class="text">
-                    163 ${ 163|plural([`игровой и&nbsp;спортивный комплекс`, `игровых и&nbsp;спортивных
-                    комплекса`, `игровых и&nbsp;спортивных комплексов`]) }, более 500 разнообразных модулей для
-                    детских игровых площадок, 275 ${ 275|plural([`единица`, `единицы`, `единиц`]) } оборудования
-                    для спортивных площадок и&nbsp;свыше 100 элементов благоустройства территорий. Компания
-                    Наш&nbsp;Двор разрабатывает и&nbsp;создаёт детские площадки, которые вовлекают
-                    в&nbsp;активную игру, заряжают уверенностью в&nbsp;себе и&nbsp;помогают детям общаться друг
-                    с&nbsp;другом. </p>
-            </div>
-        </div>
-    </section>
-    <section class="mapRegions">
-        <div class="wrapper">
-            <h2 class="title alt2">
-                28 ${ 28|plural([`представитель`, `представителя`, `представителей`]) } в 111 ${
-                111|plural([`регионе`, `регионах`, `регионах`]) } </h2>
-            <p class="text">
-                Консультации, замеры и&nbsp;монтаж проводят наши представители в&nbsp;субъектах РФ, а&nbsp;также
-                ближнего и&nbsp;дальнего зарубежья. Это позволяет сократить сроки между первыми согласованиями
-                проекта до&nbsp;доставки на&nbsp;место монтажа. </p>
-            <p class="text">
-                <span class="mapLegend altYes">Регионы, в которые возможна доставка</span>
-                <span class="mapLegend altNo">Регионы, в которые доставка невозможна</span>
-            </p>
-            <div class="mapSvg"><img src="<?php echo get_template_directory_uri(); ?>/assets/css/images/map.png" alt=""></div>
-        </div>
-    </section>
+    <?php if (get_field('mainSection')) : ?>
+            <?php while (have_rows('mainSection')) : the_row();
+                $mS_title = get_sub_field('mS_title');
+                $mS_content = get_sub_field('mS_content');
+                $mS_slider = get_sub_field('mS_slider');
+                $mS_photo = get_sub_field('mS_photo');
+                $mS_video = get_sub_field('mS_video');
+                $mS_yes = get_sub_field('mS_yes');
+                $mS_no = get_sub_field('mS_no'); ?>
+                <section class="mapRegions">
+                    <div class="wrapper">
+                        <h2 class="title alt2"><?php echo $mS_title; ?></h2>
+                        <p class="text"><?php echo $mS_content; ?></p>
+                        <p class="text">
+                            <?php echo $mS_yes; ?>
+                            <?php echo $mS_no; ?>
+                        </p>
+                        <div class="mapSvg"><img src="<?php echo esc_url($mS_photo['url']); ?>" alt=""></div>
+                        <div class="mapSvg"><?php echo $mS_video; ?></div>
+                        <div class="mapSvg"><?php echo $mS_slider; ?></div>
+                    </div>
+                </section>
+            <?php endwhile; ?>
+         <?php endif; ?>
     <section class="news">
         <div class="wrapper">
                     <h2 class="title alt2">Новости</h2>
@@ -118,29 +110,16 @@ Template Name: Главная
                                 if ($query->have_posts()) : ?>
                                 <?php while ($query->have_posts()) : $query->the_post(); ?>
 
-                                    <a href="<?php the_permalink(); ?>" class="catalogItem itemProduct" style="">
+                                    <a href="<?php the_permalink(); ?>" class="catalogItem itemProduct">
                                         <div class="itemImg"><?php the_post_thumbnail(); ?></div>
-                                        <h2 class="itemName"><?php the_title(); ?></h2>
                                         <div class="itemArt"><?php echo get_the_date( 'j F Y' ); ?></div>
+                                        <h2 class="itemName"><?php the_title(); ?></h2>
                                     </a>
                 <?php endwhile; ?>
                 <?php endif; ?>
-                <button class="btn btnMore catalogMore"><a href="/novosti">Загрузить ещё</a></button>
-
-                        
-            </div>
-                    
+                <button class="btn btnMore catalogMore"><a href="/blog">Загрузить ещё</a></button>       
+            </div>      
         </div>
-    </section>
-    <section class="mapRegions">
-        <div class="wrapper">
-            <h2 class="title alt2">Сертификаты</h2>
-            <p class="text"> Мы награждены многими дипломами и наградами. </p>
-            <div class="mapSvg">
-            <?php
-                echo do_shortcode('[smartslider3 slider=2]');
-            ?>
-            </div>
     </section>
 
 <?php get_footer(); ?>

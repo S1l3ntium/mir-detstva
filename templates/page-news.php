@@ -14,8 +14,8 @@ get_header();
                                 if ($query->have_posts()) : ?>
                                 <?php while ($query->have_posts()) : $query->the_post(); ?>
 
-                                    <a href="<?php the_permalink(); ?>" class="catalogItem itemProduct" style="">
-                                        <div class="itemImg"><?php the_post_thumbnail('news-image'); ?></div>
+                                <a href="<?php the_permalink(); ?>" class="catalogItem itemProduct">
+                                        <div class="itemImg"><?php the_post_thumbnail(); ?></div>
                                         <div class="itemArt"><?php echo get_the_date( 'j F Y' ); ?></div>
                                         <h2 class="itemName"><?php the_title(); ?></h2>
                                     </a>
